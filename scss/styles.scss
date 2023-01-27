@@ -1,0 +1,137 @@
+@import 'scss/_global';
+
+body {
+  background: #f9fafe;
+}
+
+
+.notifications {
+  background: white;
+  padding-inline: var(--container-padding);
+
+  @include up(830) {
+    border-radius: 14px;
+    margin-block: 62px;
+    -webkit-box-shadow: 0px 0px 23px 7px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 23px 7px rgba(0,0,0,0.08);
+  }
+}
+.notifications .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+.notifications .header .title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 800;
+  color: var(--color-dark);
+  font-size: 18px;
+
+  @include up(830) {
+    font-size: 20px;
+  }
+}
+.notifications .header .title span {
+  display: grid;
+  place-items: center;
+  background: var(--color-blue);
+  color: white;
+  font-weight: 800;
+  border-radius: 5px;
+  height: 24px;
+  aspect-ratio: 64 / 50;
+  font-size: 14px;
+
+  @include up(830) {
+    height: 25px;
+    aspect-ratio: 32 / 25;
+    font-size: 14px;
+  }
+}
+.notifications .header .read-all {
+  color: var(--color-grey);
+  font-size: 12px;
+  
+  @include up(830) {
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.notifs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.notifs .notif {
+  display: flex;
+  gap: 12px;
+  padding: 15px;
+
+  &.new {
+    background: var(--color-blue-light);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+}
+.notifs .notif .avatar {
+  width: 40px;
+
+  @include up(830) {
+    width: 50px;
+  }
+}
+.notifs .notif .detail {
+  flex: 1;
+}
+.notifs .notif .detail .text {
+  margin-bottom: 5px;
+}
+.notifs .notif .detail .text,
+.notifs .notif .detail .date {
+  color: var(--color-grey);
+}
+.notifs .notif .detail .text .user {
+  font-weight: 800;
+  color: var(--color-dark);
+}
+.notifs .notif.new .detail .text .new {
+  display: inline-block;
+  margin-left: 8px;
+  background: var(--color-red);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+.notifs .notif .detail .text a {
+  color: var(--color-blue);
+  font-weight: 800;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.notifs .notif .detail .message {
+  border: 1px solid var(--color-blue-light);
+  border-radius: 5px;
+  margin-top: 12px;
+  padding: 20px 16px;
+  color: var(--color-grey);
+}
+.notifs .notif .picture {
+  width: 40px;
+  margin-left: 16px;
+
+  @include up(830) {
+    width: 45px;
+  }
+}
